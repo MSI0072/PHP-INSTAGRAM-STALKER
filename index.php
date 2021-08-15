@@ -23,8 +23,8 @@ $json = [
     'profile_picture_url' => $account->getProfilePicUrl(),
     'external_link' => $account->getExternalUrl(),
     'number_published_posts' => $account->getMediaCount(),
-    'number_followers' => $account->getFollowsCount(),
-    'number_follows' => $account->getFollowedByCount(),
+    'number_follows' => $account->getFollowsCount(),
+    'number_followers' => $account->getFollowedByCount(),
     'is_private' => $account->isPrivate(),
     'is_verified' => $account->isVerified()
 ];
