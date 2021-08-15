@@ -1,13 +1,19 @@
 <?php
 
+$name = $_GET['name'] ?? null;
+
+if ($name == null) {
+    echo 'Masukan parameter name!';
+    die;
+}
+
 require_once "vendor/autoload.php";
 
 use Phpfastcache\Helper\Psr16Adapter;
 
 $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'techkangipul', 'Fikriqwerty23', new Psr16Adapter('Files'));
 $instagram->login();
-$account = $instagram->getAccountById(3);
-$account = $instagram->getAccount('kevin');
+$account = $instagram->getAccount($name);
 
 $json = [
     'id' => $account->getId(),
